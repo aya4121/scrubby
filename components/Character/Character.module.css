@@ -1,0 +1,46 @@
+/* Character.module.css — SVG character animations per dirty stage */
+
+.characterWrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+/* Idle float animation */
+.character {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Dirt overlays */
+.dirt-0 { opacity: 0; }
+.dirt-1 { opacity: 0.2; }
+.dirt-2 { opacity: 0.45; }
+.dirt-3 { opacity: 0.7; }
+.dirt-4 { opacity: 1; }
+
+/* Stage 4 shake */
+.shake {
+  animation: float 3s ease-in-out infinite, shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-4px); }
+  75%       { transform: translateX(4px); }
+}
+
+/* Sparkle for stage 0 */
+.sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(1.3); }
+}
